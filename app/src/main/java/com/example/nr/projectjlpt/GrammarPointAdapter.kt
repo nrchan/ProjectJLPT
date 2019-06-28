@@ -21,7 +21,8 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.grammarPattern.text = grammars[position].pattern
+        val pattern = grammars[position].pattern + " / " + grammars[position].meaning
+        holder.grammarPattern.text = pattern
         holder.grammarRomaji.text = grammars[position].romaji
     }
 

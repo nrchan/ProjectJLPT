@@ -10,13 +10,13 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/grammar_list_pattern_default"
-            android:textSize="20sp"/>
+            android:textSize="20sp" android:paddingTop="4sp" android:textColor="@color/titleText"/>
     <TextView
             android:id="@+id/grammar_romaji"
             android:text="@string/grammar_list_romaji_default"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="12sp"/>
+            android:textSize="12sp" android:paddingBottom="4sp" android:textColor="@color/normalText"/>
 
 </LinearLayout>
 
