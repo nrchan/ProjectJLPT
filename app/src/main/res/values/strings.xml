@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Project JLPT</string>
+    <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
+    <string name="grammar_list_romaji_default">Its Associated Romaji</string>
+</resources>
