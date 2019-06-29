@@ -5,4 +5,5 @@
     <string name="grammar_list_activity_btn_text">Grammar List</string>
     <string name="grammar_list_activity_title">All the grammar</string>
     <string name="main_activity_title">お帰りなさい！</string>
+    <string name="grammar_list_meaning_default">Its meaning here :)</string>
 </resources>
