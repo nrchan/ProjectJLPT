@@ -14,7 +14,7 @@
             android:layout_marginTop="96dp"
             app:layout_constraintTop_toTopOf="parent" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" android:textColor="@color/titleText"
-            android:fontFamily="@font/noto_sans_cjk_black" android:textAlignment="textEnd"
+            android:fontFamily="@font/noto_serif_cjk_black" android:textAlignment="textEnd"
             android:textSize="36sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
     <HorizontalScrollView
@@ -26,58 +26,43 @@
             app:layout_constraintVertical_bias="0.7">
         <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
                       android:orientation="horizontal"
-                      style="?android:attr/buttonBarStyle">
-            <Button
+                      android:scrollbars="none">
+            <com.google.android.material.button.MaterialButton
                     android:text="@string/grammar_list_activity_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/grammar_list_activity_btn"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textSize="18sp" android:background="@drawable/btn_rounded"
-                    android:textColor="@color/cardview_light_background" android:paddingTop="4sp"
-                    android:paddingBottom="4sp" android:fontFamily="@font/noto_sans_cjk_black"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:textAllCaps="false" android:paddingStart="16sp" android:paddingEnd="16sp"/>
+                    app:backgroundTint="@color/colorSecondary"
+                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                    app:cornerRadius="16dp"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                     android:text="@string/vocab_list_activity_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/vocab_list_activity_btn"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textSize="18sp" android:background="@drawable/btn_rounded"
-                    android:textColor="@color/cardview_light_background" android:paddingTop="4sp"
-                    android:paddingBottom="4sp" android:fontFamily="@font/noto_sans_cjk_black"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:textAllCaps="false" android:paddingStart="16sp" android:paddingEnd="16sp"/>
+                    app:backgroundTint="@color/colorSecondary"
+                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                    app:cornerRadius="16dp"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                     android:text="@string/grammar_practice_activity_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/grammar_practice_activity_btn"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textSize="18sp" android:background="@drawable/btn_rounded"
-                    android:textColor="@color/cardview_light_background" android:paddingTop="4sp"
-                    android:paddingBottom="4sp" android:fontFamily="@font/noto_sans_cjk_black"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:textAllCaps="false" android:paddingStart="16sp" android:paddingEnd="16sp"/>
+                    app:backgroundTint="@color/colorSecondary"
+                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                    app:cornerRadius="16dp"/>
 
-            <Button
+            <com.google.android.material.button.MaterialButton
                     android:text="@string/vocab_practice_activity_btn_text"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:id="@+id/vocab_practice_activity_btn"
-                    android:layout_marginEnd="8dp"
-                    android:layout_marginStart="8dp"
-                    android:textSize="18sp" android:background="@drawable/btn_rounded"
-                    android:textColor="@color/cardview_light_background" android:paddingTop="4sp"
-                    android:paddingBottom="4sp" android:fontFamily="@font/noto_sans_cjk_black"
-                    style="?android:attr/buttonBarButtonStyle"
-                    android:textAllCaps="false" android:paddingStart="16sp" android:paddingEnd="16sp"/>
+                    app:backgroundTint="@color/colorSecondary"
+                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                    app:cornerRadius="16dp"/>
+
         </LinearLayout>
     </HorizontalScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>
