@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
-        android:orientation="vertical"
+        xmlns:app="http://schemas.android.com/apk/res-auto" android:orientation="vertical"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" android:paddingTop="4sp">
 
@@ -15,14 +15,14 @@
                 android:layout_height="wrap_content"
                 android:text="@string/grammar_list_pattern_default"
                 android:textSize="20sp" android:textColor="@color/titleText"
-                android:paddingStart="0sp" android:paddingEnd="4sp" android:fontFamily="@font/noto_serif_cjk_regular"
-        />
+                android:fontFamily="@font/noto_serif_cjk_regular"
+                android:textStyle="bold" android:layout_marginStart="0sp" android:layout_marginEnd="4sp"/>
         <TextView
                 android:text="@string/grammar_list_meaning_default"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content" android:id="@+id/grammar_meaning" android:layout_weight="1"
-                android:textSize="20sp" android:paddingStart="4sp" android:paddingEnd="0sp"
-        />
+                android:textSize="20sp"
+                android:textColor="@color/normalText" android:layout_marginStart="4sp" android:layout_marginEnd="0sp"/>
     </LinearLayout>
     <TextView
             android:id="@+id/grammar_romaji"

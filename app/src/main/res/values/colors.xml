@@ -6,6 +6,7 @@
     <color name="colorSecondary">#304FFE</color>
     <color name="colorSecondaryDark">#0026ca</color>
     <color name="secondaryColorAccent">#7a7cff</color>
+    <color name="purewhite">#ffffff</color>
     <color name="titleText">#000000</color>
     <color name="normalText">#424242</color>
 </resources>
