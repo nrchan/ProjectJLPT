@@ -1,18 +1,19 @@
 package com.example.nr.projectjlpt
 
 import android.content.Context
+import android.content.Intent
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.grammar_list_item.view.*
 
 class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private val context: Context) : RecyclerView.Adapter<ViewHolder>(){
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        Log.d("GrammarPointAdapter", "In onCreateViewHolder")
         return ViewHolder(LayoutInflater.from(context).inflate(R.layout.grammar_list_item, parent, false))
     }
 
@@ -25,6 +26,17 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
         holder.grammarPattern.text = pattern
         holder.grammarMeaning.text = grammars[position].meaning
         holder.grammarRomaji.text = grammars[position].romaji
+        holder.itemView.setOnClickListener {
+            val intent = Intent(context, IndividualGrammarPointActivity::class.java)
+            intent.putExtra("pattern", grammars[position].pattern)
+            intent.putExtra("kana", grammars[position].kana)
+            intent.putExtra("romaji", grammars[position].romaji)
+            intent.putExtra("meaning", grammars[position].meaning)
+            intent.putExtra("level", grammars[position].level)
+            intent.putExtra("explanation", grammars[position].explanation)
+            intent.putExtra("usage", grammars[position].usage)
+            context.startActivity(intent)
+        }
     }
 
 
