@@ -21,7 +21,14 @@ class IndividualGrammarPointActivity : AppCompatActivity() {
             intent.getStringExtra("usage")
         )
 
-        textView.text = grammar.pattern
+        patternText.text = grammar.pattern
+        romajiText.text = grammar.romaji
+        kanaText.text = if(!grammar.kana.isNullOrBlank()) {
+            "(${grammar.kana})"
+        } else {
+            ""
+        }
+        meaningText.text = grammar.meaning
 
     }
 }

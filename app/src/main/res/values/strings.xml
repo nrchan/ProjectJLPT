@@ -1,12 +1,22 @@
 <resources>
     <string name="app_name">Project JLPT</string>
-    <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
-    <string name="grammar_list_romaji_default">Its Associated Romaji</string>
-    <string name="grammar_list_activity_btn_text">文法\nGrammar</string>
-    <string name="grammar_list_activity_title">All the grammar</string>
+
     <string name="main_activity_title">お帰りなさい。</string>
-    <string name="grammar_list_meaning_default">Its meaning here :)</string>
+    <string name="grammar_list_activity_btn_text">文法\nGrammar</string>
     <string name="vocab_list_activity_btn_text">語彙\nVocabs</string>
     <string name="grammar_practice_activity_btn_text">文法練習\nGram. Practice</string>
     <string name="vocab_practice_activity_btn_text">語彙練習\nVocab Practice</string>
+
+    <string name="grammar_list_activity_title">All the grammar</string>
+    <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
+    <string name="grammar_list_romaji_default">Its Associated Romaji</string>
+    <string name="grammar_list_meaning_default">Its meaning here :)</string>
+
+    <string name="individual_grammar_pattern_default">文法パターン</string>
+    <string name="individual_grammar_romaji_default">bunpou pataan</string>
+    <string name="individual_grammar_kana_default">ぶんぽうぱたーん</string>
+    <string name="individual_grammar_meaning_default">This is just a template</string>
+    <string name="individual_grammar_level_default">N5</string>
+    <string name="individual_grammar_explanation_default">This is an explanation</string>
+    <string name="individual_grammar_usage_default">Usage here</string>
 </resources>

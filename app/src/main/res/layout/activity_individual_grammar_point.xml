@@ -5,14 +5,51 @@
         xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".IndividualGrammarPointActivity">
+        tools:context=".IndividualGrammarPointActivity" android:background="@color/colorPrimary">
 
     <TextView
-            android:text="TextView"
+            android:text="@string/individual_grammar_pattern_default"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/textView" app:layout_constraintStart_toStartOf="parent"
+            android:id="@+id/patternText" app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            android:layout_marginTop="16dp" android:layout_marginStart="8dp" android:textAlignment="viewStart"
+            app:layout_constraintHorizontal_bias="0.1" android:fontFamily="@font/noto_serif_cjk_black"
+            android:textSize="30sp" android:textColor="@color/titleText"/>
+    <TextView
+            android:text="@string/individual_grammar_romaji_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/romajiText"
+            app:layout_constraintTop_toBottomOf="@+id/patternText"
+            app:layout_constraintBottom_toTopOf="@+id/divider" android:layout_marginBottom="8dp"
+            app:layout_constraintStart_toStartOf="@+id/patternText"
+            android:textColor="@color/normalText" android:fontFamily="@font/noto_sans_cjk_regular"/>
+    <TextView
+            android:text="@string/individual_grammar_kana_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/kanaText"
+            app:layout_constraintStart_toEndOf="@+id/romajiText" android:layout_marginStart="8dp"
+            app:layout_constraintBottom_toTopOf="@+id/divider"
+            android:textColor="@color/normalText" android:fontFamily="@font/noto_sans_cjk_regular"
+            app:layout_constraintTop_toTopOf="@id/romajiText" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintHorizontal_bias="0.0"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="395dp"
+            android:layout_height="1dp"
+            android:background="@color/colorAccent"
+            app:layout_constraintTop_toBottomOf="@+id/romajiText"
+            app:layout_constraintEnd_toEndOf="parent"
+            android:visibility="visible"
+            android:layout_marginEnd="32dp"
+            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="32dp"/>
+    <TextView
+            android:text="@string/individual_grammar_meaning_default"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/meaningText" app:layout_constraintStart_toStartOf="@+id/patternText"
+            app:layout_constraintTop_toBottomOf="@+id/divider" android:layout_marginTop="8dp"
+            android:textColor="@color/titleText" android:fontFamily="@font/noto_sans_cjk_regular"
+            android:textSize="18sp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
