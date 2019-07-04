@@ -35,6 +35,7 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
             intent.putExtra("level", grammars[position].level)
             intent.putExtra("explanation", grammars[position].explanation)
             intent.putExtra("usage", grammars[position].usage)
+            intent.putExtra("example", grammars[position].example)
             context.startActivity(intent)
         }
     }

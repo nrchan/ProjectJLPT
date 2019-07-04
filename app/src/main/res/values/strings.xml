@@ -19,4 +19,8 @@
     <string name="individual_grammar_level_default">N5</string>
     <string name="individual_grammar_explanation_default">This is an explanation</string>
     <string name="individual_grammar_usage_default">Usage here</string>
+    <string name="individual_grammar_example_default">にほんご\nnihongo\nJapanese</string>
+    <string name="individual_grammar_explanation">Explanation・説明</string>
+    <string name="individual_grammar_usage">Usage・使い方</string>
+    <string name="individual_grammar_example">Example・例文</string>
 </resources>

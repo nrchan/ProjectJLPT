@@ -18,7 +18,8 @@ class IndividualGrammarPointActivity : AppCompatActivity() {
             intent.getStringExtra("meaning"),
             intent.getIntExtra("level", 0),
             intent.getStringExtra("explanation"),
-            intent.getStringExtra("usage")
+            intent.getStringExtra("usage"),
+            intent.getStringExtra("example")
         )
 
         patternText.text = grammar.pattern
@@ -29,6 +30,9 @@ class IndividualGrammarPointActivity : AppCompatActivity() {
             ""
         }
         meaningText.text = grammar.meaning
+        usageText.text = grammar.printUsage()
+        explanationText.text = grammar.printExplanation()
+        exampleText.text = grammar.printExample()
 
     }
 }

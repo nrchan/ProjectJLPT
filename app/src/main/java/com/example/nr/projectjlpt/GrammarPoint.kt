@@ -11,7 +11,8 @@ data class GrammarPoint(
     @ColumnInfo(name = "meaning") val meaning: String?,
     @ColumnInfo(name = "level") val level: Int?,
     @ColumnInfo(name = "explanation") val explanation: String?,
-    @ColumnInfo(name = "usage") val usage: String?
+    @ColumnInfo(name = "usage") val usage: String?,
+    @ColumnInfo(name = "example") val example: String?
 ) {
 
     fun printUsage() : String?{
@@ -20,6 +21,10 @@ data class GrammarPoint(
 
     fun printExplanation() : String?{
         return explanation?.replace("\\n", System.getProperty("line.separator")!!)
+    }
+
+    fun printExample() : String?{
+        return example?.replace("\\n", System.getProperty("line.separator")!!)
     }
 }
 

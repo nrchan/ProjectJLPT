@@ -47,6 +47,7 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                     } else {
                         GlobalScope.launch(Dispatchers.IO) {
                             for (docs in querySnapShot!!.documentChanges) {
+                                Log.d("what the", "docs.document.getString(\"pattern\"),")
                                 grammardb.GrammarPointDao().insertAll(
                                     GrammarPoint(
                                         null,
@@ -56,7 +57,8 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                                         docs.document.getString("meaning"),
                                         docs.document.getField("level"),
                                         docs.document.getString("explanation"),
-                                        docs.document.getString("usage")
+                                        docs.document.getString("usage"),
+                                        docs.document.getString("example")
                                     )
                                 )
                             }
