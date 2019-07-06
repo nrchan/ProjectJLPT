@@ -12,13 +12,43 @@
             android:layout_height="wrap_content" android:id="@+id/patternText" app:layout_constraintEnd_toEndOf="parent"
             android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
             android:layout_marginStart="8dp" android:layout_marginTop="8dp" app:layout_constraintTop_toTopOf="parent"
-            android:textSize="24sp" android:fontFamily="@font/noto_sans_bold" android:textAllCaps="false"
+            android:textSize="24sp" android:fontFamily="@font/noto_sans_cjk_black" android:textAllCaps="false"
             android:textColor="@color/titleText"/>
+    <View
+            android:id="@+id/divider"
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:background="@color/colorSecondary"
+            app:layout_constraintTop_toBottomOf="@id/patternText"
+            app:layout_constraintStart_toStartOf="@id/grammar_list"
+            app:layout_constraintEnd_toEndOf="@id/grammar_list"
+    />
     <androidx.recyclerview.widget.RecyclerView
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/grammar_list" app:layout_constraintTop_toBottomOf="@+id/patternText"
+            android:layout_height="0dp"
+            android:id="@+id/grammar_list" app:layout_constraintTop_toBottomOf="@id/divider"
             app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="16dp"
-            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"/>
+            app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
+            android:layout_marginBottom="8dp" app:layout_constraintBottom_toBottomOf="parent">
+    </androidx.recyclerview.widget.RecyclerView>
+    <TextView
+            android:text="@string/grammar_list_activity_progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" android:id="@+id/progressText"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginTop="8dp"
+            app:layout_constraintTop_toTopOf="@+id/patternText" app:layout_constraintEnd_toEndOf="parent"
+            android:layout_marginEnd="8dp" app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="8dp" android:fontFamily="@font/noto_sans_cjk_regular"
+            android:textColor="@color/normalText"/>
+    <ProgressBar
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:id="@+id/progressBar"
+            app:layout_constraintStart_toStartOf="@id/progressText"
+            android:layout_marginStart="8dp" app:layout_constraintEnd_toEndOf="@id/progressText"
+            android:layout_marginEnd="8dp"
+            android:indeterminate="true" app:layout_constraintTop_toBottomOf="@id/progressText"
+    />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

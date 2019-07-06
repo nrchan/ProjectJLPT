@@ -41,6 +41,12 @@ interface GrammarPointDao {
 
     @Delete
     fun delete(grammarpoint: GrammarPoint)
+
+    @Query("DELETE FROM grammarpoint WHERE pattern = :pattern")
+    fun deleteByPattern(pattern: String?)
+
+    @Query("DELETE FROM grammarpoint")
+    fun deleteAll()
 }
 
 @Database(entities = arrayOf(GrammarPoint::class), version = 1, exportSchema = false)

@@ -9,6 +9,7 @@ import android.os.Handler
 import android.util.Log
 import android.view.View
 import android.widget.ProgressBar
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.room.Room
 import com.google.firebase.firestore.FirebaseFirestore
@@ -35,10 +36,12 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
             AppDatabase::class.java, "grammarpoint.db"
         ).build()
 
-        val sharedPref = getSharedPreferences("pref", Context.MODE_PRIVATE)
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
         val isGrammarDownloaded = sharedPref.getBoolean("isGrammarDownloaded", false)
 
         if (!isGrammarDownloaded) {
+            progressText.visibility = View.VISIBLE
+            progressBar.visibility = View.VISIBLE
             val db = FirebaseFirestore.getInstance()
             db.collection("grammar")
                 .addSnapshotListener { querySnapShot, e ->
@@ -47,7 +50,7 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                     } else {
                         GlobalScope.launch(Dispatchers.IO) {
                             for (docs in querySnapShot!!.documentChanges) {
-                                Log.d("what the", "docs.document.getString(\"pattern\"),")
+                                Log.d("Firestore", "Saving ${docs.document.getString("pattern")} to database.")
                                 grammardb.GrammarPointDao().insertAll(
                                     GrammarPoint(
                                         null,
@@ -65,9 +68,12 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                             launch(Dispatchers.IO) {
                                 Log.d("Coroutine", "linking adapter")
                                 val grammars = ArrayList(grammardb.GrammarPointDao().getAll())
+                                grammars.sortByDescending { it.level }
                                 withContext(Dispatchers.Main) {
                                     grammar_list.layoutManager = LinearLayoutManager(this@GrammarListActivity)
                                     grammar_list.adapter = GrammarPointAdapter(grammars, this@GrammarListActivity)
+                                    progressText.visibility = View.GONE
+                                    progressBar.visibility = View.GONE
                                 }
                             }
                         }
@@ -77,6 +83,7 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                         editor.apply()
                     }
                 }
+
         } else {
             launch(Dispatchers.IO) {
                 Log.d("Coroutine", "linking adapter")
@@ -86,6 +93,8 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                     grammar_list.adapter = GrammarPointAdapter(grammars, this@GrammarListActivity)
                 }
             }
+            progressText.visibility = View.GONE
+            progressBar.visibility = View.GONE
         }
     }
 }

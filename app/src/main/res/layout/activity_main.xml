@@ -65,4 +65,11 @@
 
         </LinearLayout>
     </HorizontalScrollView>
+    <ImageButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" app:srcCompat="@drawable/ic_settings_24dp"
+            android:id="@+id/setting_btn"
+            app:layout_constraintTop_toTopOf="parent" app:layout_constraintStart_toStartOf="parent"
+            android:contentDescription="@string/title_activity_settings" android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp" android:backgroundTint="@color/colorPrimary"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

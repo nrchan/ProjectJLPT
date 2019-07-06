@@ -17,5 +17,9 @@ class MainActivity : AppCompatActivity() {
         grammar_list_activity_btn.setOnClickListener {
             startActivity(Intent(this, GrammarListActivity::class.java))
         }
+
+        setting_btn.setOnClickListener {
+            startActivity(Intent(this, SettingsActivity::class.java))
+        }
     }
 }

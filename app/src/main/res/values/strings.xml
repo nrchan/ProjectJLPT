@@ -8,6 +8,7 @@
     <string name="vocab_practice_activity_btn_text">語彙練習\nVocab Practice</string>
 
     <string name="grammar_list_activity_title">All the grammar</string>
+    <string name="grammar_list_activity_progressText">Loading Now・ロード中</string>
     <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
     <string name="grammar_list_romaji_default">Its Associated Romaji</string>
     <string name="grammar_list_meaning_default">Its meaning here :)</string>
@@ -23,4 +24,12 @@
     <string name="individual_grammar_explanation">Explanation・説明</string>
     <string name="individual_grammar_usage">Usage・使い方</string>
     <string name="individual_grammar_example">Example・例文</string>
+    <string name="title_activity_settings">Settings</string>
+
+    <!-- Preference Titles -->
+    <string name="download_header">Download</string>
+
+    <!--Downloaded  Preferences -->
+    <string name="grammar_downloaded_title">Delete grammars</string>
+    <string name="grammar_downloaded_summary">Delete all downloaded grammar points from this device.</string>
 </resources>
