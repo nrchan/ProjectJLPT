@@ -1,18 +1,19 @@
 <resources>
     <string name="app_name">Project JLPT</string>
 
+    <!--main activity-->
     <string name="main_activity_title">お帰りなさい。</string>
-    <string name="grammar_list_activity_btn_text">文法\nGrammar</string>
-    <string name="vocab_list_activity_btn_text">語彙\nVocabs</string>
-    <string name="grammar_practice_activity_btn_text">文法練習\nGram. Practice</string>
-    <string name="vocab_practice_activity_btn_text">語彙練習\nVocab Practice</string>
+    <string name="grammar_list_activity_btn_text">Grammar・文法</string>
+    <string name="conjugation_activity_btn_text">Word Conjugation・活用</string>
 
+    <!--grammar list activity-->
     <string name="grammar_list_activity_title">All the grammar</string>
     <string name="grammar_list_activity_progressText">Loading Now・ロード中</string>
     <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
     <string name="grammar_list_romaji_default">Its Associated Romaji</string>
     <string name="grammar_list_meaning_default">Its meaning here :)</string>
 
+    <!--individual grammar point activity-->
     <string name="individual_grammar_pattern_default">文法パターン</string>
     <string name="individual_grammar_romaji_default">bunpou pataan</string>
     <string name="individual_grammar_kana_default">ぶんぽうぱたーん</string>
@@ -28,8 +29,15 @@
 
     <!-- Preference Titles -->
     <string name="download_header">Download</string>
+    <string name="custom_header">Customize</string>
+
+    <!-- Customize Preferences -->
+    <string name="name_title">How should I call you?</string>
+    <string name="address_title">How would you like to be addressed?</string>
+    <string name="address_summary">Choose the one that suits you best!</string>
 
     <!--Downloaded  Preferences -->
-    <string name="grammar_downloaded_title">Delete grammars</string>
-    <string name="grammar_downloaded_summary">Delete all downloaded grammar points from this device.</string>
+    <string name="grammar_downloaded_title">Refresh grammars</string>
+    <string name="grammar_downloaded_summary">Refresh your downloaded grammar points on this device.</string>
+    <string name="grammar_downloaded_summary_not_enabled">Your downloaded grammar points are refreshed!</string>
 </resources>

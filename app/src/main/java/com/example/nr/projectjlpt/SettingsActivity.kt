@@ -10,6 +10,8 @@ import androidx.preference.Preference
 import androidx.preference.PreferenceFragmentCompat
 import androidx.preference.PreferenceManager
 import androidx.room.Room
+import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.getField
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
@@ -38,7 +40,9 @@ class SettingsActivity : AppCompatActivity(){
                         ).build()
                         grammardb.GrammarPointDao().deleteAll()
                         launch(Dispatchers.Main) {
-                            Toast.makeText(activity, "All Downloaded Grammars Deleted!", Toast.LENGTH_LONG).show()
+                            Toast.makeText(activity, "All Downloaded Grammars Refreshed!", Toast.LENGTH_LONG).show()
+                            preference.isEnabled = false
+                            preference.summary = getString(R.string.grammar_downloaded_summary_not_enabled)
                         }
                         val sharedPref = PreferenceManager.getDefaultSharedPreferences(activity)
                         val editor = sharedPref.edit()

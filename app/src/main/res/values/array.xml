@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="address_name">
+        <item>さん</item>
+        <item>くん</item>
+    </string-array>
+</resources>

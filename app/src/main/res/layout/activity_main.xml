@@ -17,54 +17,37 @@
             android:fontFamily="@font/noto_serif_cjk_black" android:textAlignment="textEnd"
             android:textSize="36sp" app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
             app:layout_constraintHorizontal_bias="1.0"/>
-    <HorizontalScrollView
-            android:layout_width="0dp"
-            android:layout_height="wrap_content" android:layout_marginTop="8dp"
-            app:layout_constraintTop_toTopOf="parent" android:layout_marginBottom="8dp"
-            app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent" android:layout_marginStart="8dp"
-            app:layout_constraintVertical_bias="0.7">
-        <LinearLayout android:layout_width="wrap_content" android:layout_height="match_parent"
-                      android:orientation="horizontal"
-                      android:scrollbars="none">
-            <com.google.android.material.button.MaterialButton
-                    android:text="@string/grammar_list_activity_btn_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/grammar_list_activity_btn"
-                    app:backgroundTint="@color/colorSecondary"
-                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
-                    app:cornerRadius="16dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                    android:text="@string/vocab_list_activity_btn_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/vocab_list_activity_btn"
-                    app:backgroundTint="@color/colorSecondary"
-                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
-                    app:cornerRadius="16dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                    android:text="@string/grammar_practice_activity_btn_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/grammar_practice_activity_btn"
-                    app:backgroundTint="@color/colorSecondary"
-                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
-                    app:cornerRadius="16dp"/>
-
-            <com.google.android.material.button.MaterialButton
-                    android:text="@string/vocab_practice_activity_btn_text"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:id="@+id/vocab_practice_activity_btn"
-                    app:backgroundTint="@color/colorSecondary"
-                    android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
-                    app:cornerRadius="16dp"/>
-
-        </LinearLayout>
-    </HorizontalScrollView>
+    <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            android:layout_marginStart="32dp" app:layout_constraintEnd_toEndOf="parent" android:layout_marginEnd="32dp"
+            app:layout_constraintTop_toBottomOf="@+id/main_activity_title" android:layout_marginBottom="8dp"
+            app:layout_constraintBottom_toBottomOf="parent" android:layout_height="wrap_content"
+            android:layout_marginTop="8dp">
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/grammar_list_activity_btn_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/grammar_list_activity_btn"
+                app:backgroundTint="@color/colorSecondary"
+                android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                app:cornerRadius="8dp" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"/>
+        <com.google.android.material.button.MaterialButton
+                android:text="@string/conjugation_activity_btn_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/conjugation_activity_btn"
+                app:backgroundTint="@color/colorSecondary"
+                android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                app:cornerRadius="8dp" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"/>
+    </LinearLayout>
     <ImageButton
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" app:srcCompat="@drawable/ic_settings_24dp"
