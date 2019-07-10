@@ -28,6 +28,8 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
         holder.grammarPattern.text = pattern
         holder.grammarMeaning.text = grammars[position].meaning
         holder.grammarRomaji.text = grammars[position].romaji
+        val levelWithN = "N${grammars[position].level}"
+        holder.grammarLevel.text = levelWithN
         holder.itemView.setOnClickListener {
             val intent = Intent(context, IndividualGrammarPointActivity::class.java)
             intent.putExtra("pattern", grammars[position].pattern)
@@ -49,4 +51,5 @@ class ViewHolder (view: View) : RecyclerView.ViewHolder(view) {
     val grammarPattern : TextView = view.grammar_pattern
     val grammarMeaning : TextView = view.grammar_meaning
     val grammarRomaji : TextView = view.grammar_romaji
+    val grammarLevel : TextView = view.grammar_level
 }

@@ -8,7 +8,6 @@
         <item name="colorAccent">@color/colorAccent</item>
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-        <item name="preferenceTheme">@style/customPref</item>
     </style>
 
     <style name="AppTheme.Launch">
@@ -18,11 +17,6 @@
     <style name="AppTheme.NoActionBar">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="customPref" parent="PreferenceThemeOverlay.v14.Material">
-        <item name="android:textColor">@color/colorSecondary</item>
-        <item name="android:textColorSecondary">@color/colorSecondaryDark</item>
     </style>
 
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar"/>

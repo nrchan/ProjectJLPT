@@ -4,5 +4,8 @@
     <string-array name="address_name">
         <item>さん</item>
         <item>くん</item>
+        <item>ちゃん</item>
+        <item>たん</item>
+        <item>様</item>
     </string-array>
 </resources>

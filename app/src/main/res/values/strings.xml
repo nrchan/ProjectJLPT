@@ -12,6 +12,7 @@
     <string name="grammar_list_pattern_default">Grammar Pattern Here</string>
     <string name="grammar_list_romaji_default">Its Associated Romaji</string>
     <string name="grammar_list_meaning_default">Its meaning here :)</string>
+    <string name="grammar_list_level_default">N?</string>
 
     <!--individual grammar point activity-->
     <string name="individual_grammar_pattern_default">文法パターン</string>
@@ -28,16 +29,16 @@
     <string name="title_activity_settings">Settings</string>
 
     <!-- Preference Titles -->
-    <string name="download_header">Download</string>
+    <string name="data_header">Data</string>
     <string name="custom_header">Customize</string>
-
     <!-- Customize Preferences -->
     <string name="name_title">How should I call you?</string>
-    <string name="address_title">How would you like to be addressed?</string>
+    <string name="name_summary">Your name, nickname, username&#8230; all will do!</string>
+    <string name="address_title">How should I address you?</string>
     <string name="address_summary">Choose the one that suits you best!</string>
-
     <!--Downloaded  Preferences -->
     <string name="grammar_downloaded_title">Refresh grammars</string>
-    <string name="grammar_downloaded_summary">Refresh your downloaded grammar points on this device.</string>
-    <string name="grammar_downloaded_summary_not_enabled">Your downloaded grammar points are refreshed!</string>
+    <string name="grammar_downloaded_snackbar">Your downloaded grammar points are refreshed!</string>
+    <string name="grammar_downloaded_snackbar_button_text">Go now!</string>
+
 </resources>

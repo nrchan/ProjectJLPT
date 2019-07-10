@@ -23,7 +23,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         setting_btn.setOnClickListener {
-            startActivity(Intent(this, SettingsActivity::class.java))
+            startActivity(Intent(this, SettingActivity::class.java))
         }
     }
 }

@@ -100,7 +100,7 @@
                 app:layout_constraintTop_toBottomOf="@+id/meaningText"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
-                android:textColor="@color/normalText"/>
+                android:textColor="@color/normalText" android:textStyle="bold"/>
         <TextView
                 android:text="@string/individual_grammar_explanation"
                 android:layout_width="0dp"
@@ -109,7 +109,7 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/usageText"
                 app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
-                android:textColor="@color/normalText"/>
+                android:textColor="@color/normalText" android:textStyle="bold"/>
 
         <TextView
                 android:text="@string/individual_grammar_example"
@@ -119,6 +119,6 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/explanationText"
                 app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
-                android:textColor="@color/normalText"/>
+                android:textColor="@color/normalText" android:textStyle="bold"/>
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>
