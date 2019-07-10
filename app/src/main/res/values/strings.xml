@@ -32,6 +32,14 @@
     <string name="data_header">Data</string>
     <string name="custom_header">Customize</string>
     <!-- Customize Preferences -->
+    <string name="level_title">Current level</string>
+    <string name="level_summary">Which level are you studying for?</string>
+    <string name="level_N5">N5</string>
+    <string name="level_N4">N4</string>
+    <string name="level_N3">N3</string>
+    <string name="level_N2">N2</string>
+    <string name="level_N1">N1</string>
+    <string name="level_No">None</string>
     <string name="name_title">How should I call you?</string>
     <string name="name_summary">Your name, nickname, username&#8230; all will do!</string>
     <string name="address_title">How should I address you?</string>
