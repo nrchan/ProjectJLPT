@@ -10,6 +10,8 @@ import android.view.ViewGroup
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.app.ActivityOptionsCompat
+import androidx.core.content.ContextCompat
+import androidx.preference.PreferenceManager
 import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.grammar_list_item.view.*
 
@@ -30,6 +32,10 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
         holder.grammarRomaji.text = grammars[position].romaji
         val levelWithN = "N${grammars[position].level}"
         holder.grammarLevel.text = levelWithN
+
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
+        if(sharedPref.getInt("level", -1) == grammars[position].level) holder.grammarLevel.setTextColor(ContextCompat.getColor(context,R.color.colorSecondary))
+
         holder.itemView.setOnClickListener {
             val intent = Intent(context, IndividualGrammarPointActivity::class.java)
             intent.putExtra("pattern", grammars[position].pattern)
