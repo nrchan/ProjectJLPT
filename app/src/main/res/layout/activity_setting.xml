@@ -73,10 +73,11 @@
                 style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
                 android:layout_height="wrap_content"
                 android:id="@+id/name_input"
-                app:counterMaxLength="10" app:counterEnabled="true" app:boxStrokeColor="@color/colorAccent"
+                app:boxStrokeColor="@color/colorAccent"
                 app:layout_constraintStart_toStartOf="@+id/customTitle"
                 app:layout_constraintTop_toBottomOf="@id/name_summary"
-                app:layout_constraintEnd_toStartOf="@id/address_spinner">
+                app:layout_constraintEnd_toStartOf="@id/address_spinner" app:counterMaxLength="10"
+                app:counterEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
                     android:layout_width="match_parent"
@@ -90,7 +91,7 @@
                 android:entries="@array/address_name"
                 app:layout_constraintTop_toTopOf="@id/name_input"
                 app:layout_constraintBottom_toBottomOf="@id/name_input"
-                app:layout_constraintEnd_toStartOf="@id/name_btn"/>
+                app:layout_constraintEnd_toStartOf="@id/name_btn" android:spinnerMode="dialog"/>
         <com.google.android.material.button.MaterialButton
                 android:id="@+id/name_btn"
                 style="@style/Widget.MaterialComponents.Button.OutlinedButton"

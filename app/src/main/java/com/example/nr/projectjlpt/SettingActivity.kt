@@ -55,6 +55,14 @@ class SettingActivity : AppCompatActivity() {
 
         name_btn.setOnClickListener {
             val name = name_input_editText.text.toString()
+            if (name.length > 10) {
+                Snackbar.make(
+                    name_btn,
+                    R.string.name_too_long,
+                    Snackbar.LENGTH_SHORT
+                ).show()
+                return@setOnClickListener
+            }
             editor.putString("name", name)
             editor.putString("addressing", address_spinner.selectedItem.toString())
             editor.putInt("addressing_index", address_spinner.selectedItemPosition)
@@ -65,7 +73,7 @@ class SettingActivity : AppCompatActivity() {
                     true -> R.string.name_snackbar
                     else -> R.string.name_not_set
                 },
-                Snackbar.LENGTH_LONG
+                Snackbar.LENGTH_SHORT
             ).show()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
@@ -109,8 +117,10 @@ class SettingActivity : AppCompatActivity() {
                                 R.string.grammar_downloaded_snackbar,
                                 Snackbar.LENGTH_LONG
                             ).setAction(R.string.grammar_downloaded_snackbar_button_text)
-                            {startActivity(Intent(this@SettingActivity, GrammarListActivity::class.java))}
-                                .show()
+                            {
+                                startActivity(Intent(this@SettingActivity, GrammarListActivity::class.java))
+                                finish()
+                            }.show()
                         }
                     }
             }

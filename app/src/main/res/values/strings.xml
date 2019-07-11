@@ -49,6 +49,7 @@
     <string name="name_summary">Your name, nickname, username&#8230; all will do!</string>
     <string name="name_snackbar">Name saved!</string>
     <string name="name_not_set">Hmm&#8230; I can\'t see any name?</string>
+    <string name="name_too_long">Sorry, this name is too long for me&#8230;</string>
     <!--Downloaded  Preferences -->
     <string name="grammar_downloaded_title">Refresh grammars</string>
     <string name="grammar_downloaded_snackbar">Your downloaded grammar points are refreshed!</string>
