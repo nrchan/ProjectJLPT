@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import kotlinx.android.synthetic.main.activity_main.*
 import android.graphics.Typeface
+import android.widget.Toast
 import androidx.preference.PreferenceManager
 import java.util.*
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity() {
         }
 
         conjugation_activity_btn.setOnClickListener {
-            //startActivity(Intent(this, ConjugationActivity::class.java))
+            startActivity(Intent(this, ConjugationActivity::class.java))
         }
 
         setting_btn.setOnClickListener {
