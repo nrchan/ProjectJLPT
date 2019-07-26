@@ -106,8 +106,8 @@
     <string name="conjugation_activity_verb_group3_caupas">させられる\nこさせられる</string>
 
     <string name="conjugation_activity_onbin_title">Te and Ta form</string>
-    <string name="conjugation_activity_onbin_te_title">Te form</string>
-    <string name="conjugation_activity_onbin_ta_title">Ta form</string>
+    <string name="conjugation_activity_onbin_te_title">Te form\nて形</string>
+    <string name="conjugation_activity_onbin_ta_title">Ta form\nた形</string>
     <string name="conjugation_activity_onbin_title_tte">(Group 1)\nう・つ・る</string>
     <string name="conjugation_activity_onbin_te_tte">って</string>
     <string name="conjugation_activity_onbin_ta_tte">った</string>
@@ -148,8 +148,8 @@
     <string name="conjugation_activity_onbin_ta_suru_ex">勉強した</string>
 
     <string name="conjugation_activity_adj_title">Adjective Conjugation</string>
-    <string name="conjugation_activity_adj_i_title">い adj\nい形容詞\n形容詞</string>
-    <string name="conjugation_activity_adj_na_title">な adj\nな形容詞\n形容動詞</string>
+    <string name="conjugation_activity_adj_i_title">い adj\nい形容詞\n(形容詞)</string>
+    <string name="conjugation_activity_adj_na_title">な adj\nな形容詞\n(形容動詞)</string>
     <string name="conjugation_activity_adj_title_a">present\naffirmative</string>
     <string name="conjugation_activity_adj_i_a">~い</string>
     <string name="conjugation_activity_adj_na_a">(+だ)</string>
