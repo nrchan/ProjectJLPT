@@ -76,7 +76,7 @@
                 app:boxStrokeColor="@color/colorAccent"
                 app:layout_constraintStart_toStartOf="@+id/customTitle"
                 app:layout_constraintTop_toBottomOf="@id/name_summary"
-                app:layout_constraintEnd_toStartOf="@id/address_spinner" app:counterMaxLength="10"
+                app:layout_constraintEnd_toStartOf="@id/address_spinner" app:counterMaxLength="8"
                 app:counterEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText

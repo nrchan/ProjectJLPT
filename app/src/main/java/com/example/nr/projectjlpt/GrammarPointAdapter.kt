@@ -35,6 +35,7 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
 
         val sharedPref = PreferenceManager.getDefaultSharedPreferences(context)
         if(sharedPref.getInt("level", -1) == grammars[position].level) holder.grammarLevel.setTextColor(ContextCompat.getColor(context,R.color.colorSecondary))
+        else holder.grammarLevel.setTextColor(ContextCompat.getColor(context,R.color.colorAccent))
 
         holder.itemView.setOnClickListener {
             val intent = Intent(context, IndividualGrammarPointActivity::class.java)

@@ -70,7 +70,9 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                                 val grammars = ArrayList(grammardb.GrammarPointDao().getAll())
                                 val sortedGrammars = ArrayList(grammars.sortedWith(compareByDescending<GrammarPoint> { it.level } .thenBy{it.pattern}))
                                 withContext(Dispatchers.Main) {
-                                    grammar_list.layoutManager = LinearLayoutManager(this@GrammarListActivity)
+                                    val lm = LinearLayoutManager(this@GrammarListActivity)
+                                    lm.scrollToPositionWithOffset(toPosition(sortedGrammars),0)
+                                    grammar_list.layoutManager = lm
                                     grammar_list.adapter = GrammarPointAdapter(sortedGrammars, this@GrammarListActivity)
                                     progressText.visibility = View.GONE
                                     progressBar.visibility = View.GONE
@@ -90,12 +92,28 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                 val grammars = ArrayList(grammardb.GrammarPointDao().getAll())
                 val sortedGrammars = ArrayList(grammars.sortedWith(compareByDescending<GrammarPoint> { it.level } .thenBy{it.pattern}))
                 withContext(Dispatchers.Main) {
-                    grammar_list.layoutManager = LinearLayoutManager(this@GrammarListActivity)
+                    val lm = LinearLayoutManager(this@GrammarListActivity)
+                    lm.scrollToPositionWithOffset(toPosition(sortedGrammars),0)
+                    grammar_list.layoutManager = lm
                     grammar_list.adapter = GrammarPointAdapter(sortedGrammars, this@GrammarListActivity)
                 }
             }
             progressText.visibility = View.GONE
             progressBar.visibility = View.GONE
         }
+    }
+
+    private fun toPosition(grammars: ArrayList<GrammarPoint>) : Int{
+        val sharedPref = PreferenceManager.getDefaultSharedPreferences(this)
+        val targetLevel = sharedPref.getInt("level", -1)
+
+        for(it in 0 until grammars.size-1) {
+            if(grammars[it].level == targetLevel) {
+                Log.d("toPosition", grammars[it].pattern)
+                return it
+            }
+        }
+
+        return 0
     }
 }

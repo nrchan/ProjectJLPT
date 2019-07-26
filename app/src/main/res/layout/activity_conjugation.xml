@@ -1,14 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <ScrollView
         xmlns:android="http://schemas.android.com/apk/res/android"
-        xmlns:tools="http://schemas.android.com/tools"
-        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:app="http://schemas.android.com/apk/res-auto" xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".ConjugationActivity">
 
         <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
                       android:orientation="vertical">
+            <View
+                    android:id="@+id/divider0"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorSecondary"
+                    android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
+            />
             <TextView
                     android:text="@string/conjugation_activity_verb_title"
                     android:layout_width="match_parent"
@@ -21,251 +27,449 @@
                     android:layout_height="1dp"
                     android:background="@color/colorSecondary"
                     android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"/>
-            <HorizontalScrollView
+            <androidx.constraintlayout.widget.ConstraintLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent">
-                <TableLayout
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent" android:id="@+id/verb_table">
 
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:id="@+id/verb_table_title" android:gravity="center">
-                        <TextView
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content" android:id="@+id/tit0"
-                                android:padding="8dp"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_title"
-                                android:id="@+id/tit1"
-                                style="@style/conjugation_table_title_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_title"
-                                android:id="@+id/tit2"
-                                style="@style/conjugation_table_title_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_title"
-                                android:id="@+id/tit3"
-                                style="@style/conjugation_table_title_style"/>
-                    </TableRow>
-                    <TableRow
-                            android:layout_width="match_parent"
-                            android:layout_height="match_parent" android:id="@+id/verb_table_dictionary"
-                            android:gravity="center">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_dict"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/dict0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_dict"
-                                android:id="@+id/dict1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_dict"
-                                android:id="@+id/dict2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_dict"
-                                android:id="@+id/dict3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_polite">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_masu"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/masu0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_masu"
-                                android:id="@+id/masu1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_masu"
-                                android:id="@+id/masu2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_masu"
-                                android:id="@+id/masu3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_negative">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_neg"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/neg0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_neg"
-                                android:id="@+id/neg1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_neg"
-                                android:id="@+id/neg2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_neg"
-                                android:id="@+id/neg3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_potential">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_pot"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/pot0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_pot"
-                                android:id="@+id/pot1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_pot"
-                                android:id="@+id/pot2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_pot"
-                                android:id="@+id/pot3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_conditional">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_con"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/con0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_con"
-                                android:id="@+id/con1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_con"
-                                android:id="@+id/con2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_con"
-                                android:id="@+id/con3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_volitional">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_vol"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/vol0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_vol"
-                                android:id="@+id/vol1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_vol"
-                                android:id="@+id/vol2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_vol"
-                                android:id="@+id/vol3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_prohibitive">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_proh"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/proh0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_proh"
-                                android:id="@+id/proh1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_proh"
-                                android:id="@+id/proh2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_proh"
-                                android:id="@+id/proh3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_imperative">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_imp"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/imp0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_imp"
-                                android:id="@+id/imp1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_imp"
-                                android:id="@+id/imp2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_imp"
-                                android:id="@+id/imp3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_causative">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_cau"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/cau0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_cau"
-                                android:id="@+id/cau1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_cau"
-                                android:id="@+id/cau2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_cau"
-                                android:id="@+id/cau3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_passive">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_pas"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/pas0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_pas"
-                                android:id="@+id/pas1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_pas"
-                                android:id="@+id/pas2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_pas"
-                                android:id="@+id/pas3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                    <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
-                              android:gravity="center" android:id="@+id/verb_table_causative_passive">
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_title_caupas"
-                                style="@style/conjugation_table_title_style"
-                                android:id="@+id/caupas0"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group1_caupas"
-                                android:id="@+id/caupas1"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group2_caupas"
-                                android:id="@+id/caupas2"
-                                style="@style/conjugation_table_content_style"/>
-                        <TextView
-                                android:text="@string/conjugation_activity_verb_group3_caupas"
-                                android:id="@+id/caupas3"
-                                style="@style/conjugation_table_content_style"/>
-                    </TableRow>
-                </TableLayout>
-            </HorizontalScrollView>
-            <TextView
-                    android:text="@string/conjugation_activity_adj_title"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" android:id="@+id/adj_title" android:textAlignment="center"
-                    android:textColor="@color/titleText" android:textSize="24sp"
-                    android:fontFamily="@font/noto_sans_cjk_black"/>
+                <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintStart_toStartOf="parent">
+                    <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content" android:id="@+id/verb_table">
+
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/verb_table_title" android:gravity="center">
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:id="@+id/tit0"
+                                    android:padding="8dp"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group1_title"
+                                    android:id="@+id/tit1"
+                                    style="@style/conjugation_table_title_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group2_title"
+                                    android:id="@+id/tit2"
+                                    style="@style/conjugation_table_title_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_title"
+                                    android:id="@+id/tit3"
+                                    style="@style/conjugation_table_title_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/verb_table_dictionary"
+                                android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_dict"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/dict0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_dict"
+                                        android:id="@+id/dict1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_dict_ex"
+                                        android:id="@+id/dict1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_dict"
+                                        android:id="@+id/dict2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_dict_ex"
+                                        android:id="@+id/dict2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_dict"
+                                    android:id="@+id/dict3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_polite">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_masu"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/masu0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_masu"
+                                        android:id="@+id/masu1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_masu_ex"
+                                        android:id="@+id/masu1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_masu"
+                                        android:id="@+id/masu2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_masu_ex"
+                                        android:id="@+id/masu2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_masu"
+                                    android:id="@+id/masu3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_negative">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_neg"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/neg0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_neg"
+                                        android:id="@+id/neg1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_neg_ex"
+                                        android:id="@+id/neg1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_neg"
+                                        android:id="@+id/neg2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_neg_ex"
+                                        android:id="@+id/neg2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_neg"
+                                    android:id="@+id/neg3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_potential">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_pot"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/pot0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_pot"
+                                        android:id="@+id/pot1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_pot_ex"
+                                        android:id="@+id/pot1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_pot"
+                                        android:id="@+id/pot2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_pot_ex"
+                                        android:id="@+id/pot2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_pot"
+                                    android:id="@+id/pot3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_conditional">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_con"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/con0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_con"
+                                        android:id="@+id/con1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_con_ex"
+                                        android:id="@+id/con1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_con"
+                                        android:id="@+id/con2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_con_ex"
+                                        android:id="@+id/con2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_con"
+                                    android:id="@+id/con3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_volitional">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_vol"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/vol0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_vol"
+                                        android:id="@+id/vol1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_vol_ex"
+                                        android:id="@+id/vol1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_vol"
+                                        android:id="@+id/vol2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_vol_ex"
+                                        android:id="@+id/vol2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_vol"
+                                    android:id="@+id/vol3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_prohibitive">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_proh"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/proh0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_proh"
+                                        android:id="@+id/proh1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_proh_ex"
+                                        android:id="@+id/proh1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_proh"
+                                        android:id="@+id/proh2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_proh_ex"
+                                        android:id="@+id/proh2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_proh"
+                                    android:id="@+id/proh3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_imperative">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_imp"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/imp0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_imp"
+                                        android:id="@+id/imp1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_imp_ex"
+                                        android:id="@+id/imp1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_imp"
+                                        android:id="@+id/imp2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_imp_ex"
+                                        android:id="@+id/imp2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_imp"
+                                    android:id="@+id/imp3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_causative">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_cau"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/cau0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_cau"
+                                        android:id="@+id/cau1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_cau_ex"
+                                        android:id="@+id/cau1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_cau"
+                                        android:id="@+id/cau2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_cau_ex"
+                                        android:id="@+id/cau2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_cau"
+                                    android:id="@+id/cau3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_passive">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_pas"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/pas0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_pas"
+                                        android:id="@+id/pas1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_pas_ex"
+                                        android:id="@+id/pas1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_pas"
+                                        android:id="@+id/pas2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_pas_ex"
+                                        android:id="@+id/pas2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_pas"
+                                    android:id="@+id/pas3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:gravity="center" android:id="@+id/verb_table_causative_passive">
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_title_caupas"
+                                    style="@style/conjugation_table_title_style"
+                                    android:id="@+id/caupas0"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_caupas"
+                                        android:id="@+id/caupas1"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group1_caupas_ex"
+                                        android:id="@+id/caupas1_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_caupas"
+                                        android:id="@+id/caupas2"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_verb_group2_caupas_ex"
+                                        android:id="@+id/caupas2_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <TextView
+                                    android:text="@string/conjugation_activity_verb_group3_caupas"
+                                    android:id="@+id/caupas3"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
             <View
                     android:id="@+id/divider2"
                     android:layout_width="match_parent"
@@ -274,11 +478,11 @@
                     android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
             />
             <TextView
-                android:text="@string/conjugation_activity_noun_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:id="@+id/noun_title" android:textAlignment="center"
-                android:textColor="@color/titleText" android:textSize="24sp"
-                android:fontFamily="@font/noto_sans_cjk_black"/>
+                    android:text="@string/conjugation_activity_onbin_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/onbin_title" android:textAlignment="center"
+                    android:textColor="@color/titleText" android:textSize="24sp"
+                    android:fontFamily="@font/noto_sans_cjk_black"/>
             <View
                     android:id="@+id/divider3"
                     android:layout_width="match_parent"
@@ -286,5 +490,465 @@
                     android:background="@color/colorSecondary"
                     android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
             />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent">
+                    <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/onbin_table"
+                    >
+
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_title" android:gravity="center">
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_te_title"
+                                    android:id="@+id/te_title"
+                                    style="@style/conjugation_table_title_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_ta_title"
+                                    android:id="@+id/ta_title"
+                                    style="@style/conjugation_table_title_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_tte" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_tte"
+                                    android:id="@+id/title_tte"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_tte"
+                                        android:id="@+id/te_tte"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_tte_ex"
+                                        android:id="@+id/te_tte_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_tte"
+                                        android:id="@+id/ta_tte"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_tte_ex"
+                                        android:id="@+id/ta_tte_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_shite" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_shite"
+                                    android:id="@+id/title_shite"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_shite"
+                                        android:id="@+id/te_shite"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_shite_ex"
+                                        android:id="@+id/te_shite_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_shite"
+                                        android:id="@+id/ta_shite"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_shite_ex"
+                                        android:id="@+id/ta_shite_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_ite" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_ite"
+                                    android:id="@+id/title_ite"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_ite"
+                                        android:id="@+id/te_ite"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_ite_ex"
+                                        android:id="@+id/te_ite_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_ite"
+                                        android:id="@+id/ta_ite"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_ite_ex"
+                                        android:id="@+id/ta_ite_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_ide" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_ide"
+                                    android:id="@+id/title_ide"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_ide"
+                                        android:id="@+id/te_ide"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_ide_ex"
+                                        android:id="@+id/te_ide_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_ide"
+                                        android:id="@+id/ta_ide"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_ide_ex"
+                                        android:id="@+id/ta_ide_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_nde" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_nde"
+                                    android:id="@+id/title_nde"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_nde"
+                                        android:id="@+id/te_nde"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_nde_ex"
+                                        android:id="@+id/te_nde_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_nde"
+                                        android:id="@+id/ta_nde"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_nde_ex"
+                                        android:id="@+id/ta_nde_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_te" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_te"
+                                    android:id="@+id/title_te"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_te"
+                                        android:id="@+id/te_te"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_te_ex"
+                                        android:id="@+id/te_te_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_te"
+                                        android:id="@+id/ta_te"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_te_ex"
+                                        android:id="@+id/ta_te_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_kuru" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_kuru"
+                                    android:id="@+id/title_kuru"
+                                    style="@style/conjugation_table_title_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_te_kuru"
+                                    android:id="@+id/te_kuru"
+                                    style="@style/conjugation_table_content_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_ta_kuru"
+                                    android:id="@+id/ta_kuru"
+                                    style="@style/conjugation_table_content_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/onbin_table_suru" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_onbin_title_suru"
+                                    android:id="@+id/title_suru"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_suru"
+                                        android:id="@+id/te_suru"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_te_suru_ex"
+                                        android:id="@+id/te_suru_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_suru"
+                                        android:id="@+id/ta_suru"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_onbin_ta_suru_ex"
+                                        android:id="@+id/ta_suru_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+            <View
+                    android:id="@+id/divider4"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorSecondary"
+                    android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
+            />
+            <TextView
+                    android:text="@string/conjugation_activity_adj_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:id="@+id/adj_title" android:textAlignment="center"
+                    android:textColor="@color/titleText" android:textSize="24sp"
+                    android:fontFamily="@font/noto_sans_cjk_black"/>
+            <View
+                    android:id="@+id/divider5"
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/colorSecondary"
+                    android:layout_marginStart="16dp" android:layout_marginEnd="16dp" android:layout_marginTop="8dp"
+            />
+            <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+                <HorizontalScrollView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent" app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent" app:layout_constraintTop_toTopOf="parent">
+                    <TableLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="match_parent" android:id="@+id/adj_table"
+                    >
+
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/adj_table_title" android:gravity="center">
+                            <TextView
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:padding="8dp"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_i_title"
+                                    android:id="@+id/i_title"
+                                    style="@style/conjugation_table_title_style"/>
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_na_title"
+                                    android:id="@+id/name_title"
+                                    style="@style/conjugation_table_title_style"/>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/adj_table_a" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_title_a"
+                                    android:id="@+id/title_a"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_a"
+                                        android:id="@+id/i_a"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_a_ex"
+                                        android:id="@+id/i_a_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_a"
+                                        android:id="@+id/na_a"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_a_ex"
+                                        android:id="@+id/na_a_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/adj_table_n" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_title_n"
+                                    android:id="@+id/title_n"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_n"
+                                        android:id="@+id/i_n"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_n_ex"
+                                        android:id="@+id/i_n_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_n"
+                                        android:id="@+id/na_n"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_n_ex"
+                                        android:id="@+id/na_n_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/adj_table_pa" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_title_pa"
+                                    android:id="@+id/title_pa"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_pa"
+                                        android:id="@+id/i_pa"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_pa_ex"
+                                        android:id="@+id/i_pa_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_pa"
+                                        android:id="@+id/na_pa"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_pa_ex"
+                                        android:id="@+id/na_pa_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                        <TableRow android:layout_width="match_parent" android:layout_height="match_parent"
+                                  android:id="@+id/adj_table_pn" android:gravity="center">
+                            <TextView
+                                    android:text="@string/conjugation_activity_adj_title_pn"
+                                    android:id="@+id/title_pn"
+                                    style="@style/conjugation_table_title_style"/>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_pn"
+                                        android:id="@+id/i_pn"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_i_pn_ex"
+                                        android:id="@+id/i_pn_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                            <LinearLayout
+                                    android:orientation="vertical"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content" android:gravity="center">
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_pn"
+                                        android:id="@+id/na_pn"
+                                        style="@style/conjugation_table_content_style"/>
+                                <TextView
+                                        android:text="@string/conjugation_activity_adj_na_pn_ex"
+                                        android:id="@+id/na_pn_ex"
+                                        style="@style/conjugation_table_example_style"/>
+                            </LinearLayout>
+                        </TableRow>
+                    </TableLayout>
+                </HorizontalScrollView>
+            </androidx.constraintlayout.widget.ConstraintLayout>
         </LinearLayout>
 </ScrollView>
