@@ -12,7 +12,10 @@ data class GrammarPoint(
     @ColumnInfo(name = "level") val level: Int?,
     @ColumnInfo(name = "explanation") val explanation: String?,
     @ColumnInfo(name = "usage") val usage: String?,
-    @ColumnInfo(name = "example") val example: String?
+    @ColumnInfo(name = "example") val example: String?,
+    @ColumnInfo(name = "synonym") val synonym: String?,
+    @ColumnInfo(name = "antonym") val antonym: String?,
+    @ColumnInfo(name = "confusing") val confusing: String?
 ) {
 
     fun printUsage() : String?{
@@ -25,6 +28,18 @@ data class GrammarPoint(
 
     fun printExample() : String?{
         return example?.replace("\\n", System.getProperty("line.separator")!!)
+    }
+
+    fun printSynonym() : String?{
+        return synonym?.replace("\\n", System.getProperty("line.separator")!!)
+    }
+
+    fun printAntonym() : String?{
+        return antonym?.replace("\\n", System.getProperty("line.separator")!!)
+    }
+
+    fun printConfusing() : String?{
+        return confusing?.replace("\\n", System.getProperty("line.separator")!!)
     }
 }
 

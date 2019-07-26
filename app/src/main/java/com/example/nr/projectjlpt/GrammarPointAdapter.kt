@@ -47,6 +47,9 @@ class GrammarPointAdapter(private val grammars: ArrayList<GrammarPoint>, private
             intent.putExtra("explanation", grammars[position].explanation)
             intent.putExtra("usage", grammars[position].usage)
             intent.putExtra("example", grammars[position].example)
+            intent.putExtra("synonym", grammars[position].synonym)
+            intent.putExtra("antonym", grammars[position].antonym)
+            intent.putExtra("confusing", grammars[position].confusing)
             context.startActivity(intent)
         }
     }

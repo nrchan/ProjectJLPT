@@ -28,9 +28,15 @@
     <string name="individual_grammar_explanation_default">This is an explanation</string>
     <string name="individual_grammar_usage_default">Usage here</string>
     <string name="individual_grammar_example_default">にほんご\nnihongo\nJapanese</string>
-    <string name="individual_grammar_explanation">Explanation・説明</string>
-    <string name="individual_grammar_usage">Usage・使い方</string>
-    <string name="individual_grammar_example">Example・例文</string>
+    <string name="individual_grammar_synonym_default">Synonymous\nAnother</string>
+    <string name="individual_grammar_antonym_default">Antonymous\nAnother</string>
+    <string name="individual_grammar_confusing_default">Ahh&#8230;\nSo confusing</string>
+    <string name="individual_grammar_explanation">🎎 Explanation・説明</string>
+    <string name="individual_grammar_usage">🤔 Usage・使い方</string>
+    <string name="individual_grammar_example">🤪 Example・例文</string>
+    <string name="individual_grammar_synonym">😀 Synonymous Pattern</string>
+    <string name="individual_grammar_antonym">👺 Antonymous Pattern</string>
+    <string name="individual_grammar_confusing">😱 Don\'t confuse this pattern with:</string>
     <string name="title_activity_settings">Settings</string>
 
     <!-- ConjugationActivity Activity -->

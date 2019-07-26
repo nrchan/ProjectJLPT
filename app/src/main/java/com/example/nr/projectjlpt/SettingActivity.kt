@@ -105,7 +105,10 @@ class SettingActivity : AppCompatActivity() {
                                             docs.document.getField("level"),
                                             docs.document.getString("explanation"),
                                             docs.document.getString("usage"),
-                                            docs.document.getString("example")
+                                            docs.document.getString("example"),
+                                            docs.document.getString("synonym"),
+                                            docs.document.getString("antonym"),
+                                            docs.document.getString("confusing")
                                         )
                                     )
                                 }

@@ -64,25 +64,6 @@
                 android:textSize="18sp" app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"/>
         <TextView
-                android:text="@string/individual_grammar_explanation_default"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/explanationText" app:layout_constraintStart_toStartOf="@+id/patternText"
-                app:layout_constraintTop_toBottomOf="@id/explanation"
-                android:fontFamily="@font/noto_sans_cjk_regular" android:textColor="@color/normalText"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"/>
-        <TextView
-                android:text="@string/individual_grammar_example_default"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:id="@+id/exampleText" app:layout_constraintStart_toStartOf="@+id/patternText"
-                app:layout_constraintTop_toBottomOf="@id/example"
-                android:textColor="@color/normalText"
-                android:fontFamily="@font/noto_sans_cjk_regular"
-                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"/>
-        <TextView
                 android:text="@string/individual_grammar_usage_default"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -112,6 +93,15 @@
                 android:textColor="@color/normalText" android:textStyle="bold"/>
 
         <TextView
+                android:text="@string/individual_grammar_explanation_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/explanationText" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintTop_toBottomOf="@id/explanation"
+                android:fontFamily="@font/noto_sans_cjk_regular" android:textColor="@color/normalText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"/>
+        <TextView
                 android:text="@string/individual_grammar_example"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
@@ -120,5 +110,73 @@
                 app:layout_constraintTop_toBottomOf="@id/explanationText"
                 app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
                 android:textColor="@color/normalText" android:textStyle="bold"/>
+        <TextView
+                android:text="@string/individual_grammar_example_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/exampleText" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintTop_toBottomOf="@id/example"
+                android:textColor="@color/normalText"
+                android:fontFamily="@font/noto_sans_cjk_regular"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+        />
+        <TextView
+                android:text="@string/individual_grammar_confusing"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/confusing" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/exampleText"
+                app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+                android:textColor="@color/normalText" android:textStyle="bold"/>
+        <TextView
+                android:text="@string/individual_grammar_confusing_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/confusingText" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintTop_toBottomOf="@id/confusing"
+                android:textColor="@color/normalText"
+                android:fontFamily="@font/noto_sans_cjk_regular"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+        />
+        <TextView
+                android:text="@string/individual_grammar_synonym"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/synonym" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/confusingText"
+                app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+                android:textColor="@color/normalText" android:textStyle="bold"/>
+        <TextView
+                android:text="@string/individual_grammar_synonym_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/synonymText" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintTop_toBottomOf="@id/synonym"
+                android:textColor="@color/normalText"
+                android:fontFamily="@font/noto_sans_cjk_regular"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+        />
+        <TextView
+                android:text="@string/individual_grammar_antonym"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/antonym" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/synonymText"
+                app:layout_constraintHorizontal_bias="0.0" android:layout_marginTop="8dp"
+                android:textColor="@color/normalText" android:textStyle="bold"/>
+        <TextView
+                android:text="@string/individual_grammar_antonym_default"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:id="@+id/antonymText" app:layout_constraintStart_toStartOf="@+id/patternText"
+                app:layout_constraintTop_toBottomOf="@id/antonym"
+                android:textColor="@color/normalText"
+                android:fontFamily="@font/noto_sans_cjk_regular"
+                app:layout_constraintEnd_toEndOf="parent" app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintBottom_toBottomOf="parent" android:layout_marginBottom="16dp"/>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

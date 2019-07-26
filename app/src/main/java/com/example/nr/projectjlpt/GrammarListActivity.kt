@@ -2,6 +2,8 @@ package com.example.nr.projectjlpt
 
 import android.content.Context
 import android.content.SharedPreferences
+import android.net.ConnectivityManager
+import android.net.NetworkInfo
 import android.os.AsyncTask
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -61,7 +63,10 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
                                         docs.document.getField("level"),
                                         docs.document.getString("explanation"),
                                         docs.document.getString("usage"),
-                                        docs.document.getString("example")
+                                        docs.document.getString("example"),
+                                        docs.document.getString("synonym"),
+                                        docs.document.getString("antonym"),
+                                        docs.document.getString("confusing")
                                     )
                                 )
                             }
@@ -108,10 +113,7 @@ class GrammarListActivity : AppCompatActivity(), CoroutineScope {
         val targetLevel = sharedPref.getInt("level", -1)
 
         for(it in 0 until grammars.size-1) {
-            if(grammars[it].level == targetLevel) {
-                Log.d("toPosition", grammars[it].pattern)
-                return it
-            }
+            if(grammars[it].level == targetLevel) return it
         }
 
         return 0
