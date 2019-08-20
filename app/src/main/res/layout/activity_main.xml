@@ -37,6 +37,17 @@
                 android:layout_marginBottom="8dp"
                 android:textAlignment="center"/>
         <com.google.android.material.button.MaterialButton
+                android:text="@string/conjugator_activity_btn_text"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/conjugator_activity_btn"
+                app:backgroundTint="@color/colorSecondary"
+                android:insetLeft="4dp" android:fontFamily="@font/noto_sans_cjk_black" android:insetRight="4dp"
+                app:cornerRadius="8dp" android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginBottom="8dp"
+                android:textAlignment="center"/>
+        <com.google.android.material.button.MaterialButton
                 android:text="@string/conjugation_activity_btn_text"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"

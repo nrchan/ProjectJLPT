@@ -23,6 +23,10 @@ class MainActivity : AppCompatActivity() {
             startActivity(Intent(this, GrammarListActivity::class.java))
         }
 
+        conjugator_activity_btn.setOnClickListener {
+            startActivity(Intent(this, ConjugatorActivity::class.java))
+        }
+
         conjugation_activity_btn.setOnClickListener {
             startActivity(Intent(this, ConjugationActivity::class.java))
         }

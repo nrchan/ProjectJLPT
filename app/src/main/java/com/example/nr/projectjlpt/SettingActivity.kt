@@ -55,7 +55,7 @@ class SettingActivity : AppCompatActivity() {
 
         name_btn.setOnClickListener {
             val name = name_input_editText.text.toString()
-            if (name.length > 10) {
+            if (name.length > 8) {
                 Snackbar.make(
                     name_btn,
                     R.string.name_too_long,
@@ -77,6 +77,7 @@ class SettingActivity : AppCompatActivity() {
             ).show()
             val imm = getSystemService(Context.INPUT_METHOD_SERVICE) as InputMethodManager
             imm.hideSoftInputFromWindow(currentFocus?.windowToken, 0)
+            name_input_editText.clearFocus()
         }
 
         refreshGrammarBtn.setOnClickListener {

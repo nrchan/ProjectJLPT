@@ -10,6 +10,7 @@
     <string name="main_activity_title_evening">こんばんは。</string>
     <string name="grammar_list_activity_btn_text">Grammar・文法</string>
     <string name="conjugation_activity_btn_text">Word Conjugation・活用</string>
+    <string name="conjugator_activity_btn_text">Verb Conjugator</string>
 
     <!--grammar list activity-->
     <string name="grammar_list_activity_title">All the grammar</string>
@@ -18,6 +19,9 @@
     <string name="grammar_list_romaji_default">Its Associated Romaji</string>
     <string name="grammar_list_meaning_default">Its meaning here :)</string>
     <string name="grammar_list_level_default">N?</string>
+
+    <!--conjugator activity-->
+    <string name="verb_input_hint_text">Kanji, kana, romaji</string>
 
     <!--individual grammar point activity-->
     <string name="individual_grammar_pattern_default">文法パターン</string>

@@ -11,6 +11,8 @@
             android:supportsRtl="true"
             android:theme="@style/AppTheme"
             tools:ignore="GoogleAppIndexingWarning">
+        <activity android:name=".ConjugatorActivity">
+        </activity>
         <activity android:name=".ConjugationActivity">
         </activity>
         <activity android:name=".SettingActivity">
