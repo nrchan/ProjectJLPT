@@ -22,6 +22,29 @@
 
     <!--conjugator activity-->
     <string name="verb_input_hint_text">Kanji, kana, romaji</string>
+    <string name="conjugation_not_found">Sorry, I can\'t find the conjugation for %1$s</string>
+    <string name="conjugation_error">Sorry, something went wrong&#8230;</string>
+    <string name="conjugator_activity_verb_title_masu">Polite (masu) form ます形</string>
+    <string name="conjugator_activity_verb_title_dict">Dictionary form 辞書形</string>
+    <string name="conjugator_activity_verb_title_neg">Negative form 否定形</string>
+    <string name="conjugator_activity_verb_title_pot">Potential form 可能形</string>
+    <string name="conjugator_activity_verb_title_con">Conditional form 条件形</string>
+    <string name="conjugator_activity_verb_title_vol">Volitional form 意向形</string>
+    <string name="conjugator_activity_verb_title_proh">Prohibitive form 禁止形</string>
+    <string name="conjugator_activity_verb_title_imp">Imperative form 命令形</string>
+    <string name="conjugator_activity_verb_title_cau">Causative form 使役形</string>
+    <string name="conjugator_activity_verb_title_pas">Passive form 受身形</string>
+    <string name="conjugator_activity_verb_title_caupas">Causative-Passive form 使役受身形</string>
+    <string name="conjugator_activity_verb_title_te">Te form て形</string>
+    <string name="conjugator_activity_verb_title_ta">Ta form た形</string>
+    <string name="conjugator_activity_verb_tense_present">present</string>
+    <string name="conjugator_activity_verb_tense_past">past</string>
+    <string name="conjugator_activity_verb_default">動詞</string>
+    <string name="conjugator_activity_conjugation_default">します</string>
+    <string name="conjugator_activity_romaji_default">verb</string>
+    <string name="conjugator_activity_conjugationRomaji_default">shimasu</string>
+    <string name="conjugator_activity_progressText_search">Searching now</string>
+    <string name="conjugator_activity_progressText_conjugate">Conjugating now</string>
 
     <!--individual grammar point activity-->
     <string name="individual_grammar_pattern_default">文法パターン</string>

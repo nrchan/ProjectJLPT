@@ -9,22 +9,417 @@
         android:focusableInTouchMode="true">
 
     <com.google.android.material.textfield.TextInputLayout
-            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
-            android:layout_height="wrap_content"
             android:id="@+id/verb_input"
+            style="@style/Widget.MaterialComponents.TextInputLayout.FilledBox"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="32dp"
+            android:layout_marginEnd="32dp"
+            android:hint="@string/verb_input_hint_text"
             app:boxStrokeColor="@color/colorAccent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintBottom_toBottomOf="parent" android:layout_marginStart="32dp"
-            android:layout_width="0dp" app:layout_constraintEnd_toEndOf="parent"
-            android:layout_marginEnd="32dp" android:hint="@string/verb_input_hint_text"
-    >
+            app:layout_constraintTop_toTopOf="parent">
 
         <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/verb_input_editText"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content" android:textAlignment="textStart" android:textSize="18sp"
-                android:singleLine="true" android:id="@+id/verb_input_editText" android:imeOptions="actionSearch"
-                android:drawableEnd="@drawable/ic_search_black_24dp"/>
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_search_black_24dp"
+                android:imeOptions="actionSearch"
+                android:singleLine="true"
+                android:textAlignment="textStart"
+                android:textSize="18sp" />
 
     </com.google.android.material.textfield.TextInputLayout>
+
+    <ScrollView
+            android:id="@+id/conjugation_result_view"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/verb_input">
+
+        <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+            <TextView
+                    android:id="@+id/dict_title"
+                    android:text="@string/conjugator_activity_verb_title_dict"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/dict_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/dict_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/dict_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/dict_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/neg_title"
+                    android:text="@string/conjugator_activity_verb_title_neg"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/neg_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/neg_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/neg_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/neg_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/masu_title"
+                    android:text="@string/conjugator_activity_verb_title_masu"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/masu_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/masu_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/masu_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/masu_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/te_title"
+                    android:text="@string/conjugator_activity_verb_title_te"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/te_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/te_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/te_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/te_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/ta_title"
+                    android:text="@string/conjugator_activity_verb_title_ta"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/ta_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/ta_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/ta_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/ta_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/pot_title"
+                    android:text="@string/conjugator_activity_verb_title_pot"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/pot_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/pot_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/pot_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/pot_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/con_title"
+                    android:text="@string/conjugator_activity_verb_title_con"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/con_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/con_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/con_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/con_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/vol_title"
+                    android:text="@string/conjugator_activity_verb_title_vol"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/vol_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/vol_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/vol_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/vol_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/proh_title"
+                    android:text="@string/conjugator_activity_verb_title_proh"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/proh_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/proh_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/proh_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/proh_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/imp_title"
+                    android:text="@string/conjugator_activity_verb_title_imp"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/imp_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/imp_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/imp_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/imp_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/cau_title"
+                    android:text="@string/conjugator_activity_verb_title_cau"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/cau_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/cau_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/cau_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/cau_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/pas_title"
+                    android:text="@string/conjugator_activity_verb_title_pas"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/pas_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/pas_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/pas_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/pas_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+            <TextView
+                    android:id="@+id/caupas_title"
+                    android:text="@string/conjugator_activity_verb_title_caupas"
+                    style="@style/conjugator_title_style"/>
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                <TextView
+                        android:id="@+id/caupas_stemJa"
+                        style="@style/conjugator_stemJa_style"/>
+
+                <TextView
+                        android:id="@+id/caupas_conjugation"
+                        style="@style/conjugator_conjugation_style"/>
+
+                <TextView
+                        android:id="@+id/caupas_stemRomaji"
+                        style="@style/conjugator_stemRomaji_style" />
+
+                <TextView
+                        android:id="@+id/caupas_conjugationRomaji"
+                        style="@style/conjugator_conjugationRomaji_style" />
+
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </ScrollView>
+
+    <TextView
+            android:id="@+id/progressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:fontFamily="@font/noto_sans_cjk_regular"
+            android:text="@string/conjugator_activity_progressText_search"
+            android:textColor="@color/normalText"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+            android:id="@+id/progressBar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginEnd="8dp"
+            android:indeterminate="true"
+            android:visibility="gone"
+            app:layout_constraintEnd_toEndOf="@id/progressText"
+            app:layout_constraintStart_toStartOf="@id/progressText"
+            app:layout_constraintTop_toBottomOf="@id/progressText" />
 </androidx.constraintlayout.widget.ConstraintLayout>

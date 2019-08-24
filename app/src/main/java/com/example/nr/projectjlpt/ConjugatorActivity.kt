@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.MotionEvent
+import android.view.View
 import android.view.inputmethod.EditorInfo
 import android.view.inputmethod.InputMethodManager
 import android.widget.EditText
@@ -20,6 +21,8 @@ class ConjugatorActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_conjugator)
+
+        conjugation_result_view.visibility = View.GONE
 
         verb_input_editText.setOnTouchListener { view, motionEvent ->
             if(motionEvent.action == MotionEvent.ACTION_UP) {
@@ -55,6 +58,20 @@ class ConjugatorActivity : AppCompatActivity() {
     }
 
     private fun search(query : String) {
+        conjugation_result_view.apply {
+            animate().alpha(0f)
+            visibility = View.GONE
+        }
+        progressBar.apply {
+            visibility = View.VISIBLE
+            animate().alpha(1f)
+        }
+        progressText.apply {
+            text = getString(R.string.conjugator_activity_progressText_search)
+            visibility = View.VISIBLE
+            animate().alpha(1f)
+        }
+
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("verb")
         var myQuery : Query
@@ -70,19 +87,58 @@ class ConjugatorActivity : AppCompatActivity() {
         myQuery.get()
             .addOnSuccessListener {
                 if(it.isEmpty) {
-                    Toast.makeText(applicationContext, "Sorry, I can't find the conjugation for $query", Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, getString(R.string.conjugation_not_found, query), Toast.LENGTH_SHORT).show()
+                    progressBar.apply {
+                        animate().alpha(0f)
+                        visibility = View.GONE
+                    }
+                    progressText.apply {
+                        animate().alpha(0f)
+                        visibility = View.GONE
+                    }
                     return@addOnSuccessListener
                 }
-                it.forEach {
-                    Toast.makeText(
-                        applicationContext,
-                        it.getString("stem-kana"),
-                        Toast.LENGTH_SHORT
-                    ).show()
+
+                progressText.text = getString(R.string.conjugator_activity_progressText_conjugate)
+                //populate the conjugation_result_view
+                val verb = Verb(
+                    it.elementAt(0).getString("stem-kanji"),
+                    it.elementAt(0).getString("stem-kana"),
+                    it.elementAt(0).getString("stem-romaji"),
+                    it.elementAt(0).getString("meaning"),
+                    it.elementAt(0).getString("group")
+                )
+                var stemJa : String? = verb.stemKanji
+                if (stemJa.isNullOrBlank()) stemJa = verb.stemKana
+                var stemRomaji : String? = verb.stemRomaji
+                dict_stemJa.text =  stemJa
+                dict_conjugation.text = verb.getDict()
+                dict_stemRomaji.text = stemRomaji
+                dict_conjugationRomaji.text = verb.getDictRomaji()
+                conjugation_result_view.apply {
+                    alpha = 0f
+                    visibility = View.VISIBLE
+                    animate().alpha(1f)
+                }
+                progressBar.apply {
+                    animate().alpha(0f)
+                    visibility = View.GONE
+                }
+                progressText.apply {
+                    animate().alpha(0f)
+                    visibility = View.GONE
                 }
             }
             .addOnFailureListener {
-                Toast.makeText(applicationContext, "Sorry, something went wrong...", Toast.LENGTH_SHORT).show()
+                Toast.makeText(applicationContext, R.string.conjugation_error, Toast.LENGTH_SHORT).show()
+                progressBar.apply {
+                    animate().alpha(0f)
+                    visibility = View.GONE
+                }
+                progressText.apply {
+                    animate().alpha(0f)
+                    visibility = View.GONE
+                }
             }
     }
 
