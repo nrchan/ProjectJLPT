@@ -43,8 +43,15 @@
     <string name="conjugator_activity_conjugation_default">します</string>
     <string name="conjugator_activity_romaji_default">verb</string>
     <string name="conjugator_activity_conjugationRomaji_default">shimasu</string>
+    <string name="conjugator_activity_group_default">ichidan verb</string>
     <string name="conjugator_activity_progressText_search">Searching now</string>
     <string name="conjugator_activity_progressText_conjugate">Conjugating now</string>
+    <string name="conjugator_activity_myVerb">%1$s%2$s</string>
+    <string name="conjugator_activity_myRomaji">%1$s%2$s</string>
+    <string name="conjugator_activity_myMeaning">to %1$s</string>
+    <string name="conjugator_activity_myGroup_group1">Group 1 (ichidan) verb that ends with %1$s</string>
+    <string name="conjugator_activity_myGroup_group2">Group 2 (godan) verb that ends with %1$s</string>
+    <string name="conjugator_activity_myGroup_group3">Group 3 verb (%1$s)</string>
 
     <!--individual grammar point activity-->
     <string name="individual_grammar_pattern_default">文法パターン</string>
