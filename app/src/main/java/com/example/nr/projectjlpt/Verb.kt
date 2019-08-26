@@ -1,7 +1,5 @@
 package com.example.nr.projectjlpt
 
-import android.content.res.Resources
-
 data class Verb(
     val stemKanji : String?,
     val stemKana : String?,
@@ -437,4 +435,28 @@ data class Verb(
         "くる" -> "kosaserareru"
         else -> ""
     }
+
+    fun presentPlainA() = JA() + dict()
+
+    fun presentPlainN() = JA() + neg()
+
+    fun presentPoliteA() = JA() + masu()
+
+    fun presentPoliteN() = presentPoliteA().replace(Regex("ます$"), "ません")
+
+    fun pastPlainA() = JA() + ta()
+
+    fun pastPlainN() = presentPlainN().replace(Regex("ない$"), "なかった")
+
+    fun pastPoliteA() = presentPoliteA().replace(Regex("ます$"), "ました")
+
+    fun pastPoliteN() = presentPoliteA().replace(Regex("ます$"), "ませんでした")
+
+    fun JA() = when {
+        group == "くる" -> ""
+        stemKanji.isNullOrBlank() -> stemKana
+        else -> stemKanji
+    }
+
+    fun RO() = if (group != "くる") stemRomaji else null
 }

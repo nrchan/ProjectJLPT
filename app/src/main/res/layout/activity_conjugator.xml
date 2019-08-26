@@ -91,12 +91,115 @@
                     android:text="@string/conjugator_activity_group_default"
                     android:textColor="@color/normalText" />
 
+            <HorizontalScrollView
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                <TableLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp">
+
+                    <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                        <TextView
+                                android:id="@+id/textView"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content" />
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_verb_tense_present" />
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_verb_tense_past" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_table_title_plain_a" />
+
+                        <TextView
+                                android:id="@+id/present_plain_a"
+                                style="@style/conjugator_table_content_style" />
+
+                        <TextView
+                                android:id="@+id/past_plain_a"
+                                style="@style/conjugator_table_content_style" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_table_title_plain_n" />
+
+                        <TextView
+                                android:id="@+id/present_plain_n"
+                                style="@style/conjugator_table_content_style" />
+
+                        <TextView
+                                android:id="@+id/past_plain_n"
+                                style="@style/conjugator_table_content_style" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_table_title_polite_a" />
+
+                        <TextView
+                                android:id="@+id/present_polite_a"
+                                style="@style/conjugator_table_content_style" />
+
+                        <TextView
+                                android:id="@+id/past_polite_a"
+                                style="@style/conjugator_table_content_style" />
+                    </TableRow>
+
+                    <TableRow
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:gravity="center">
+
+                        <TextView
+                                style="@style/conjugator_table_title_style"
+                                android:text="@string/conjugator_activity_table_title_polite_n" />
+
+                        <TextView
+                                android:id="@+id/present_polite_n"
+                                style="@style/conjugator_table_content_style" />
+
+                        <TextView
+                                android:id="@+id/past_polite_n"
+                                style="@style/conjugator_table_content_style" />
+                    </TableRow>
+                </TableLayout>
+            </HorizontalScrollView>
+
             <View
                     android:id="@+id/divider"
                     android:layout_width="match_parent"
                     android:layout_height="1dp"
                     android:layout_marginTop="4dp"
-                    android:layout_marginBottom="4dp"
+                    android:layout_marginBottom="8dp"
                     android:background="@color/colorSecondary" />
 
             <TextView

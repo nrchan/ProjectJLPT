@@ -3,6 +3,7 @@ package com.example.nr.projectjlpt
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.view.MotionEvent
 import android.view.View
 import android.view.inputmethod.EditorInfo
@@ -74,14 +75,13 @@ class ConjugatorActivity : AppCompatActivity() {
 
         val db = FirebaseFirestore.getInstance()
         val docRef = db.collection("verb")
-        var myQuery : Query
-        when {
-            query.matches(Regex("^[ぁ-んァ-ヴｦ-ﾟ]+$")) ->
-                myQuery = docRef.whereEqualTo("stem-kana", queriable(query, 0))
-            query.matches(Regex("^[A-Za-z]+$")) ->
-                myQuery = docRef.whereEqualTo("stem-romaji", queriable(query, 1))
+        var myQuery = when {
+            queriable(query, 0).matches(Regex("^[ぁ-んァ-ヴｦ-ﾟ]+$")) ->
+                docRef.whereEqualTo("stem-kana", queriable(query, 0))
+            queriable(query, 1).matches(Regex("^[A-Za-z]+$")) ->
+                docRef.whereEqualTo("stem-romaji", queriable(query, 1))
             else ->
-                myQuery = docRef.whereEqualTo("stem-kanji", queriable(query, 0))
+                docRef.whereEqualTo("stem-kanji", queriable(query, 0))
         }
 
         myQuery.get()
@@ -99,7 +99,6 @@ class ConjugatorActivity : AppCompatActivity() {
                     return@addOnSuccessListener
                 }
 
-                progressText.text = getString(R.string.conjugator_activity_progressText_conjugate)
                 //populate the conjugation_result_view
                 val verb = Verb(
                     it.elementAt(0).getString("stem-kanji"),
@@ -134,73 +133,83 @@ class ConjugatorActivity : AppCompatActivity() {
                     else -> ""
                 }
 
-                if(verb.group != "くる") dict_stemJa.text =  stemJa
+                present_plain_a.text = verb.presentPlainA()
+                present_plain_n.text = verb.presentPlainN()
+                present_polite_a.text = verb.presentPoliteA()
+                present_polite_n.text = verb.presentPoliteN()
+                past_plain_a.text = verb.pastPlainA()
+                past_plain_n.text = verb.pastPlainN()
+                past_polite_a.text = verb.pastPoliteA()
+                past_polite_n.text = verb.pastPoliteN()
+
+                dict_stemJa.text = verb.JA()
                 dict_conjugation.text = verb.dict()
-                if(verb.group != "くる") dict_stemRomaji.text = stemRomaji
+                dict_stemRomaji.text = verb.RO()
                 dict_conjugationRomaji.text = verb.dictRomaji()
 
-                if(verb.group != "くる") neg_stemJa.text =  stemJa
+                neg_stemJa.text = verb.JA()
                 neg_conjugation.text = verb.neg()
-                if(verb.group != "くる") neg_stemRomaji.text = stemRomaji
+                neg_stemRomaji.text = verb.RO()
                 neg_conjugationRomaji.text = verb.negRomaji()
 
-                if(verb.group != "くる") masu_stemJa.text =  stemJa
+                masu_stemJa.text = verb.JA()
                 masu_conjugation.text = verb.masu()
-                if(verb.group != "くる") masu_stemRomaji.text = stemRomaji
+                masu_stemRomaji.text = verb.RO()
                 masu_conjugationRomaji.text = verb.masuRomaji()
 
-                if(verb.group != "くる") te_stemJa.text =  stemJa
+                te_stemJa.text = verb.JA()
                 te_conjugation.text = verb.te()
-                if(verb.group != "くる") te_stemRomaji.text = stemRomaji
+                te_stemRomaji.text = verb.RO()
                 te_conjugationRomaji.text = verb.teRomaji()
 
-                if(verb.group != "くる") ta_stemJa.text =  stemJa
+                ta_stemJa.text = verb.JA()
                 ta_conjugation.text = verb.ta()
-                if(verb.group != "くる") ta_stemRomaji.text = stemRomaji
+                ta_stemRomaji.text = verb.RO()
                 ta_conjugationRomaji.text = verb.taRomaji()
 
-                if(verb.group != "くる") pot_stemJa.text =  stemJa
+                pot_stemJa.text = verb.JA()
                 pot_conjugation.text = verb.pot()
-                if(verb.group != "くる") pot_stemRomaji.text = stemRomaji
+                pot_stemRomaji.text = verb.RO()
                 pot_conjugationRomaji.text = verb.potRomaji()
 
-                if(verb.group != "くる") con_stemJa.text =  stemJa
+                con_stemJa.text = verb.JA()
                 con_conjugation.text = verb.con()
-                if(verb.group != "くる") con_stemRomaji.text = stemRomaji
+                con_stemRomaji.text = verb.RO()
                 con_conjugationRomaji.text = verb.conRomaji()
 
-                if(verb.group != "くる") vol_stemJa.text =  stemJa
+                vol_stemJa.text = verb.JA()
                 vol_conjugation.text = verb.vol()
-                if(verb.group != "くる") vol_stemRomaji.text = stemRomaji
+                vol_stemRomaji.text = verb.RO()
                 vol_conjugationRomaji.text = verb.volRomaji()
 
-                if(verb.group != "くる") proh_stemJa.text =  stemJa
+                proh_stemJa.text = verb.JA()
                 proh_conjugation.text = verb.proh()
-                if(verb.group != "くる") proh_stemRomaji.text = stemRomaji
+                proh_stemRomaji.text = verb.RO()
                 proh_conjugationRomaji.text = verb.prohRomaji()
 
-                if(verb.group != "くる") imp_stemJa.text =  stemJa
+                imp_stemJa.text = verb.JA()
                 imp_conjugation.text = verb.imp()
-                if(verb.group != "くる") imp_stemRomaji.text = stemRomaji
+                imp_stemRomaji.text = verb.RO()
                 imp_conjugationRomaji.text = verb.impRomaji()
 
-                if(verb.group != "くる") cau_stemJa.text =  stemJa
+                cau_stemJa.text = verb.JA()
                 cau_conjugation.text = verb.cau()
-                if(verb.group != "くる") cau_stemRomaji.text = stemRomaji
+                cau_stemRomaji.text = verb.RO()
                 cau_conjugationRomaji.text = verb.cauRomaji()
 
-                if(verb.group != "くる") pas_stemJa.text =  stemJa
+                pas_stemJa.text = verb.JA()
                 pas_conjugation.text = verb.pas()
-                if(verb.group != "くる") pas_stemRomaji.text = stemRomaji
+                pas_stemRomaji.text = verb.RO()
                 pas_conjugationRomaji.text = verb.pasRomaji()
 
-                if(verb.group != "くる") caupas_stemJa.text =  stemJa
+                caupas_stemJa.text = verb.JA()
                 caupas_conjugation.text = verb.caupas()
-                if(verb.group != "くる") caupas_stemRomaji.text = stemRomaji
+                caupas_stemRomaji.text = verb.RO()
                 caupas_conjugationRomaji.text = verb.caupasRomaji()
 
                 conjugation_result_view.apply {
                     alpha = 0f
+                    scrollTo(0,0)
                     visibility = View.VISIBLE
                     animate().alpha(1f)
                 }
@@ -228,25 +237,25 @@ class ConjugatorActivity : AppCompatActivity() {
 
     //turn the raw query into the form (stem-only form) stored in database
     private fun queriable(query : String, mode : Int) : String{
-        var final = query
+        var final = query.replace(" ", "").replace("　","")
         when (mode) {
-            0 -> if(query.endsWith("う") || query.endsWith("つ") || query.endsWith("る") ||
-                query.endsWith("く") || query.endsWith("ぐ") || query.endsWith("ぬ") ||
-                query.endsWith("ぶ") || query.endsWith("む") || query.endsWith("す")) {
-                final = query.dropLast(1)
+            0 -> if(final.endsWith("う") || final.endsWith("つ") || final.endsWith("る") ||
+                final.endsWith("く") || final.endsWith("ぐ") || final.endsWith("ぬ") ||
+                final.endsWith("ぶ") || final.endsWith("む") || final.endsWith("す")) {
+                final = final.dropLast(1)
             }
             1 -> when {
-                query.endsWith("tsu", true) -> {
-                    final = query.dropLast(3)
+                final.endsWith("tsu", true) -> {
+                    final = final.dropLast(3)
                 }
-                query.endsWith("ru", true) || query.endsWith("ku", true) ||
-                        query.endsWith("gu", true) || query.endsWith("nu", true) ||
-                        query.endsWith("gu", true) || query.endsWith("mu", true) ||
-                        query.endsWith("su", true) -> {
-                    final = query.dropLast(2)
+                final.endsWith("ru", true) || final.endsWith("ku", true) ||
+                        final.endsWith("gu", true) || final.endsWith("nu", true) ||
+                        final.endsWith("gu", true) || final.endsWith("mu", true) ||
+                        final.endsWith("su", true) -> {
+                    final = final.dropLast(2)
                 }
-                query.endsWith("u", true) -> {
-                    final = query.dropLast(1)
+                final.endsWith("u", true) -> {
+                    final = final.dropLast(1)
                 }
             }
         }
